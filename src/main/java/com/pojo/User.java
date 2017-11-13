@@ -1,5 +1,11 @@
 package com.pojo;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+import java.io.Serializable;
+
 /**
  * Author:   wangchao
  * Version：
@@ -10,7 +16,9 @@ package com.pojo;
  * --------------------------------------------------------------
  * Why & What is modified:
  */
-public class User {
+
+public class User  implements Serializable {
+    private static final long serialVersionUID = 1332643889208978231L;
     private Long id;
     private String userName;
     private String userPhone;
