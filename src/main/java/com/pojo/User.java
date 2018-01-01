@@ -24,6 +24,16 @@ public class User  implements Serializable {
     private String userPhone;
     private String userEmail;
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private String password;
+
     public Long getId() {
         return id;
     }

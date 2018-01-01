@@ -3,25 +3,28 @@
 <mapper namespace="com.dao.UserDao">
 
     <resultMap id="UserBaseMap" type="com.pojo.User">
-        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <id column="Id" property="id" jdbcType="INTEGER"/>
         <result column="UserName" property="userName" jdbcType="VARCHAR"/>
-        <result column="Phone" property="userPhone" jdbcType="VARCHAR"/>
-        <result column="Email" property="userEmail" jdbcType="VARCHAR"/>
+        <result column="UserPhone" property="userPhone" jdbcType="VARCHAR"/>
+        <result column="UserEmail" property="userEmail" jdbcType="VARCHAR"/>
+        <result column="Password" property="password" jdbcType="VARCHAR"/>
     </resultMap>
 
     <select id="selectUserById" parameterType="java.lang.Long" resultMap="UserBaseMap">
-        SELECT * FROM UzaiUsers
+        SELECT * FROM users
         WHERE id = #{userId}
     </select>
 
     <select id="selectUserByPhoneOrEmail" resultMap="UserBaseMap">
-        SELECT * FROM UzaiUsers
+        SELECT * FROM users
         WHERE user_email = #{emailOrPhone} OR user_phone = #{emailOrPhone}
         AND user_state = #{state}
     </select>
 
     <select id="selectAllUser" resultMap="UserBaseMap">
-        SELECT top 100 * FROM UzaiUsers
+        SELECT top 100 * FROM users
     </select>
-
+    <select id="selectUserByPassword" resultMap="UserBaseMap">
+        SELECT top 1 * FROM users where UserName=#{userName} and Password=#{password}
+    </select>
 </mapper>
