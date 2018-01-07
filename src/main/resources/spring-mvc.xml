@@ -151,4 +151,5 @@
         <property name="order" value="1"/>
     </bean>
     <!-- redis  config  end -->
+
 </beans>

@@ -40,4 +40,9 @@ public class UserController {
     {
         return userService.selectUserById(userId);
     }
+    @RequestMapping(value = "/login",method= RequestMethod.GET,produces="application/json")
+    public ResponseEntity<Boolean> login(@RequestParam("username") String username,@RequestParam("pwd") String password)
+    {
+        return new ResponseEntity<Boolean>(userService.selectUserByPassword(username,password),HttpStatus.OK);
+    }
 }

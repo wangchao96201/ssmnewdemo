@@ -18,4 +18,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
     User selectUserById(@Param("userId") Long userId);
+
+    User selectUserByPassword(@Param("userName") String userName,@Param("password") String pwd);
 }

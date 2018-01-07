@@ -16,4 +16,5 @@ import java.util.List;
  */
 public interface UserService {
     User selectUserById(Long userId);
+    boolean selectUserByPassword(String userName,String pwd);
 }

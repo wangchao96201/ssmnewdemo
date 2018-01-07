@@ -25,6 +25,6 @@
         SELECT top 100 * FROM users
     </select>
     <select id="selectUserByPassword" resultMap="UserBaseMap">
-        SELECT top 1 * FROM users where UserName=#{userName} and Password=#{password}
+        SELECT * FROM users where UserName=#{userName} and Password=#{password}
     </select>
 </mapper>

@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
     {
          return userDao.selectUserById(userId);
     }
+
+    public boolean selectUserByPassword(String userName,String password)
+    {
+        return userDao.selectUserByPassword(userName,password)!=null?true:false;
+    }
 }
